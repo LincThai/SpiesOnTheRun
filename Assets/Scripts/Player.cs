@@ -20,11 +20,11 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position = transform.position + (transform.forward * moveSpeed);
+            transform.position = transform.position + (transform.forward * moveSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position = transform.position + (transform.forward * -moveSpeed);
+            transform.position = transform.position + (transform.forward * -moveSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.A))
         {
