@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     // set variables
     public float moveSpeed = 2;
     public float rotateSpeed = 3;
+    public float jumpSpeed = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,10 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpSpeed);
         }
     }
 }
