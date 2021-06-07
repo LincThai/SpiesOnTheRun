@@ -5,9 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // set variables
-    public float moveSpeed = 2;
-    public float rotateSpeed = 3;
     public float jumpSpeed = 2;
+    
+    // Actual Variables
+    public GameObject laneOne;
+    public GameObject laneTwo;
+    public GameObject laneThree;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,25 +22,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.position = transform.position + (transform.forward * moveSpeed * Time.deltaTime);
+            transform.position = laneOne.transform.position;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position = transform.position + (transform.forward * -moveSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(Vector3.up * -rotateSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpSpeed);
+            transform.position = laneTwo.transform.position;
         }
     }
 }
