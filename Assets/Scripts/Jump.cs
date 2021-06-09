@@ -27,10 +27,10 @@ public class Jump : MonoBehaviour
         //apply gravity to reduce players velocity
         transform.position -= gravity * Time.deltaTime;
 
-        if (Vector3.y > 0)
+        /*if (Vector3.up > Vector3.zero)
         {
             isGrounded = false;
-        }
+        }*/
         
         // when the player is on the ground
         if (isGrounded)

@@ -22,13 +22,45 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        PlayerPosition();
+    }
+
+    void PlayerPosition()
+    {
+        if (transform.position == laneOne.transform.position)
         {
-            transform.position = laneOne.transform.position;
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                transform.position = laneOne.transform.position;
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                transform.position = laneTwo.transform.position;
+            }
         }
-        if (Input.GetKey(KeyCode.S))
+        
+        else if (transform.position == laneTwo.transform.position)
         {
-            transform.position = laneTwo.transform.position;
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                transform.position = laneOne.transform.position;
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                transform.position = laneThree.transform.position;
+            }
+        }
+
+        else if (transform.position == laneThree.transform.position)
+        {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                transform.position = laneTwo.transform.position;
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                transform.position = laneThree.transform.position;
+            }
         }
     }
 }
