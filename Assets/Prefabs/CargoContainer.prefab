@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 628207132892181964}
   - component: {fileID: 9162012634979729304}
   - component: {fileID: 4729555640162174438}
-  - component: {fileID: 9032689323117328766}
+  - component: {fileID: -6804706491130800329}
   m_Layer: 0
   m_Name: CargoContainer
   m_TagString: Untagged
@@ -314,7 +314,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &9032689323117328766
+--- !u!114 &-6804706491130800329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -328,4 +328,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   timePassed: 0
-  despawnTime: 1
+  despawnTime: 30

@@ -11,7 +11,7 @@ public class ObstacleSpawner : MonoBehaviour
     public int x;
     public float z;
     int i;
-    public float timeTillSpawn;
+    public float timeTillSpawn = 30;
     public float timePassed;
     
     public bool canSpawn;
@@ -21,12 +21,13 @@ public class ObstacleSpawner : MonoBehaviour
     {
         z = transform.position.z;
         canSpawn = true;
+        timePassed = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timePassed = Time.deltaTime;
+        timePassed += Time.deltaTime;
         //ObstacleSpawn();
         if (canSpawn)
         {
@@ -34,11 +35,11 @@ public class ObstacleSpawner : MonoBehaviour
             canSpawn = false;
         }
 
-        if (timePassed == timeTillSpawn)
+        if (timePassed >= timeTillSpawn)
         {
             canSpawn = true;
+            timePassed = 0.0f;
         }
-        
     }
 
     private void ObstacleSpawn()

@@ -7,7 +7,7 @@ public class Obstacle : MonoBehaviour
     //set variables
     public float moveSpeed = 1f;
     public float timePassed;
-    public float despawnTime;
+    public float despawnTime = 30;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class Obstacle : MonoBehaviour
     {
         timePassed += Time.deltaTime;
 
-        if (timePassed == despawnTime)
+        if (timePassed <= despawnTime)
         {
             Destroy(gameObject);
             timePassed = 0.0f;

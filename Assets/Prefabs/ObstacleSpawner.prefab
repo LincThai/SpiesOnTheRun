@@ -68,10 +68,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3209510209681631693, guid: cacd3501d5d9b5f40bd512438eadf761, type: 3}
+  - {fileID: 8458882029375481291, guid: 881f742c0581c4140beedc40aa1327a4, type: 3}
+  x: 0
+  z: 0
+  timeTillSpawn: 30
+  timePassed: 0
+  canSpawn: 0
 --- !u!114 &7243727493756523815
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 329220575749215063}
   - component: {fileID: 4426256944914922593}
   - component: {fileID: 9176279572411635632}
-  - component: {fileID: 8333748334730281760}
+  - component: {fileID: 647934268256523776}
   m_Layer: 0
   m_Name: BarrierTypeA
   m_TagString: Untagged
@@ -322,7 +322,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &8333748334730281760
+--- !u!114 &647934268256523776
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -336,4 +336,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   timePassed: 0
-  despawnTime: 1
+  despawnTime: 30
