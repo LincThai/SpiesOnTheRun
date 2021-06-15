@@ -6,7 +6,7 @@ public class Platform : MonoBehaviour
 {
     // set variables
     public float moveSpeed = 1;
-    public float endPosition = 6.0f;
+    public float endPosition = 19.0f;
 
     // Update is called once per frame
     void Update()
