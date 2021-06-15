@@ -11,7 +11,7 @@ public class ObstacleSpawner : MonoBehaviour
     public int x;
     public float z;
     int i;
-    public float timeTillSpawn = 30;
+    public float timeTillSpawn = 10;
     public float timePassed;
     
     public bool canSpawn;
