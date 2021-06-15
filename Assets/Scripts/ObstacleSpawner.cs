@@ -49,7 +49,7 @@ public class ObstacleSpawner : MonoBehaviour
         //Debug.Log(x);
 
         //get random value for i
-        i = Random.Range(0, 2);
+        i = Random.Range(0, 4);
         //Debug.Log(i);
 
         //make variable spawnRotate

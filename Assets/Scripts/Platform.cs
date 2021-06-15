@@ -15,7 +15,7 @@ public class Platform : MonoBehaviour
 
         if (transform.position.z <= -endPosition)
         {
-            transform.position = transform.position + (Vector3.forward * endPosition);
+            transform.position = transform.position + (Vector3.forward * endPosition * 2);
         }
     }
 }
