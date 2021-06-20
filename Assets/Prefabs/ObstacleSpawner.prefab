@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4962271674058505441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 13}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -68,11 +68,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleList:
-  - {fileID: 3209510209681631693, guid: cacd3501d5d9b5f40bd512438eadf761, type: 3}
-  - {fileID: 8458882029375481291, guid: 881f742c0581c4140beedc40aa1327a4, type: 3}
+  - {fileID: 7196720524428791658, guid: 4b3d591a5d15c54478a5f91fda178eff, type: 3}
+  - {fileID: 6744294356066217375, guid: 14f0eecbfcbff7c4f9598ea8fe9ceaa9, type: 3}
+  - {fileID: 6808277298950131334, guid: ae8fb1e4bb3c392418752bba42539016, type: 3}
+  - {fileID: 7090459706235473520, guid: 80c8c0e91d23ab544b0b702207d1074d, type: 3}
+  - {fileID: 3547519299993523955, guid: 0e01ffd622546b34c9746f803ea1e206, type: 3}
   x: 0
   z: 0
-  timeTillSpawn: 30
+  timeTillSpawn: 7.5
   timePassed: 0
   canSpawn: 0
 --- !u!114 &7243727493756523815

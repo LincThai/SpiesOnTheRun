@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8747859616102969253}
   - component: {fileID: 3281304615228141403}
   - component: {fileID: -8275629347468540794}
+  - component: {fileID: -865951895868387383}
   m_Layer: 0
   m_Name: BarrierType03
   m_TagString: Obstacle
@@ -110,4 +111,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   timePassed: 0
-  despawnTime: 30
+  despawnTime: 50
+--- !u!54 &-865951895868387383
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7090459706235473520}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

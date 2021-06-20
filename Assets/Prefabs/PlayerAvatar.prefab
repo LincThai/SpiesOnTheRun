@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7832881738775663889}
   m_Layer: 0
   m_Name: PlayerAvatar
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,6 +132,9 @@ MonoBehaviour:
   laneOne: {fileID: 0}
   laneTwo: {fileID: 0}
   laneThree: {fileID: 0}
+  isDead: 0
+  capOne: {fileID: 5971756855972246819}
+  capTwo: {fileID: 7832881738775663889}
 --- !u!136 &5971756855972246819
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -155,7 +158,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 5174728034028996120}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
   m_Direction: 1

@@ -8,18 +8,36 @@ public class GameScreen : MonoBehaviour
     // set variables
     public int playerScore;
     public Text scoreText;
+    public bool isDead;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerScore = 0;
+        playerScore = 0; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerScore = playerScore + 1;
+        isDead = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().isDead;
+        
+        if (!isDead)
+        {
+            // increase the player score by 1
+            playerScore = playerScore + 1;
 
-        scoreText.text = playerScore.ToString();
+            // display the score
+            scoreText.text = playerScore.ToString();
+        }
+    }
+
+    public void ClickButton(int buttonClicked)
+    {
+        gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().gameState;
+
+        if (buttonClicked == 1)
+        {
+
+        }
     }
 }
