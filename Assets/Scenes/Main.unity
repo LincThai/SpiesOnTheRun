@@ -730,7 +730,7 @@ GameObject:
   - component: {fileID: 596387078}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2057,7 +2057,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-41588
+  m_Name: pb_Mesh-22084
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2346,7 +2346,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-41566
+  m_Name: pb_Mesh-22062
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2868,5 +2868,25 @@ PrefabInstance:
       propertyPath: laneThree
       value: 
       objectReference: {fileID: 23121777}
+    - target: {fileID: 5262116334024813827, guid: 799d14cc6eb2f074dbc7e9079b40da5e, type: 3}
+      propertyPath: capTwo
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5262116334024813827, guid: 799d14cc6eb2f074dbc7e9079b40da5e, type: 3}
+      propertyPath: capsuleHeightOne
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5262116334024813827, guid: 799d14cc6eb2f074dbc7e9079b40da5e, type: 3}
+      propertyPath: capsuleHeightTwo
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971756855972246819, guid: 799d14cc6eb2f074dbc7e9079b40da5e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971756855972246819, guid: 799d14cc6eb2f074dbc7e9079b40da5e, type: 3}
+      propertyPath: m_Center.y
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 799d14cc6eb2f074dbc7e9079b40da5e, type: 3}

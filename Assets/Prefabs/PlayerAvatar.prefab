@@ -92,7 +92,6 @@ GameObject:
   - component: {fileID: 1441600506160121232}
   - component: {fileID: 5262116334024813827}
   - component: {fileID: 5971756855972246819}
-  - component: {fileID: 7832881738775663889}
   m_Layer: 0
   m_Name: PlayerAvatar
   m_TagString: Player
@@ -133,8 +132,9 @@ MonoBehaviour:
   laneTwo: {fileID: 0}
   laneThree: {fileID: 0}
   isDead: 0
+  isGrounded: 0
   capOne: {fileID: 5971756855972246819}
-  capTwo: {fileID: 7832881738775663889}
+  capTwo: {fileID: 0}
 --- !u!136 &5971756855972246819
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -144,25 +144,11 @@ CapsuleCollider:
   m_GameObject: {fileID: 5174728034028996120}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
+  m_Enabled: 0
+  m_Radius: 0.25
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!136 &7832881738775663889
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5174728034028996120}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &6054851613272208689
 GameObject:
   m_ObjectHideFlags: 0

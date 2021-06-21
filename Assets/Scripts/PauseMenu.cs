@@ -18,7 +18,7 @@ public class PauseMenu : MonoBehaviour
 
     public void OnClickButton(int buttonClicked)
     {
-        gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().gameState;
+        //gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().gameState;
 
         if (buttonClicked == 1)
         {

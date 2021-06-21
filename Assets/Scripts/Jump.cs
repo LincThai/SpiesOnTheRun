@@ -22,23 +22,26 @@ public class Jump : MonoBehaviour
         {
             //apply jumpforce
             velocity = new Vector3(0, 10, 0);
-        }
-        if (transform.position.y > dropHeight)
-        {
+            //set is grounded false
             isGrounded = false;
         }
-        // when the player is on the ground
-        if (isGrounded)
+        else
         {
-          velocity = Vector3.zero;
-          gravity = Vector3.zero;
+            velocity = Vector3.zero;
         }
+        
         //apply velocity to players position
         transform.position += velocity * Time.deltaTime;
 
         //apply gravity to reduce players velocity
         transform.position -= gravity * Time.deltaTime;
-    
+        
+        // when the player is on the ground
+        if (isGrounded)
+            {
+              velocity = Vector3.zero;
+              gravity = Vector3.zero;
+            }
     }
 
     void OnTriggerEnter(Collider other)

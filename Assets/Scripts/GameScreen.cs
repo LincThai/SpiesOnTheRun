@@ -33,7 +33,7 @@ public class GameScreen : MonoBehaviour
 
     public void ClickButton(int buttonClicked)
     {
-        gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().gameState;
+        //gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().gameState;
 
         if (buttonClicked == 1)
         {

@@ -18,7 +18,7 @@ public class StartScreen : MonoBehaviour
 
     public void OnClickButton(int buttonClicked)
     {
-        gameStste = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().gameState;
+        //gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().gameState;
 
         if (buttonClicked == 1)
         {

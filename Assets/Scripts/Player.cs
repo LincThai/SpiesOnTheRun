@@ -5,7 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // set variables
-    public float jumpSpeed = 2;
+    public float velocity = 5;
+    public float gravity = 3;
+    public float fallHeight = 3;
     
     // Position Variables
     public GameObject laneOne;
@@ -17,26 +19,22 @@ public class Player : MonoBehaviour
     public bool isGrounded;
 
     // collider variables to change colliders
-    public Collider capOne;
-    public Collider capTwo;
-    private GameObject playerChildOne;
-    private GameObject playerChildTwo;
+    public float capsuleHeightOne;
+    public float capsuleHeightTwo;
+    
 
     // Start is called before the first frame update
     void Start()
     {   
         // player state
         isDead = false;
+        isGrounded = true;
         // set the players collider to standing state
-        // the first collider is turned on while the second off on the player avatar
-        capOne.enabled = capOne.enabled;
-        capTwo.enabled = !capTwo.enabled;
-        // get children of player game object
-        //playerChildOne = transform.GetChild(0);
-        //playerChildTwo = transform.GetChild(1);
-        // set game object state
-        playerChildOne.SetActive(true);
-        playerChildTwo.SetActive(false);
+        // the Change height of the collider to the first setb
+        gameObject.GetComponent<CapsuleCollider>().height = capsuleHeightOne;
+        // get children of player game object and set game object state
+        transform.GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(1).gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,6 +44,7 @@ public class Player : MonoBehaviour
         {
             PlayerPosition();
             PlayerSlide();
+            PlayerJump();
         }
     }
 
@@ -55,14 +54,26 @@ public class Player : MonoBehaviour
         if (other.tag == "Obstacle")
         {
             isDead = true;
+            Debug.Log("Dead");
+        }
+        if (other.tag == "Ground")
+        {
+            isGrounded = true;
         }
     }
 
     public void PlayerJump()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
+            transform.position += Vector3.up * velocity * Time.deltaTime;
 
+            isGrounded = false;
+
+            if (transform.position.y >= fallHeight || !isGrounded)
+            {
+                transform.position -= Vector3.up * gravity * Time.deltaTime;
+            }
         }
     }
 
@@ -71,12 +82,18 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             // set the player avatar's collider to crouch/slide state
-            capOne.enabled = !capOne.enabled;
-            capTwo.enabled = capTwo.enabled;
-            Debug.Log("Collider enabled = " + capOne.enabled + capTwo.enabled);
+            gameObject.GetComponent<CapsuleCollider>().height = capsuleHeightTwo;
             // changes the orientation of the player avatar by changing which child is active
-            playerChildOne.SetActive(false);
-            playerChildTwo.SetActive(true);
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(true);
+        }
+        else
+        {
+            // set the player avatar's collider to crouch/slide state
+            gameObject.GetComponent<CapsuleCollider>().height = capsuleHeightOne;
+            // changes the orientation of the player avatar by changing which child is active
+            transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(1).gameObject.SetActive(false);
         }
     }
 
