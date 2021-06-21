@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     // set variables
     public float velocity = 5;
     public float gravity = 3;
-    public float fallHeight = 3;
+    public float fallHeight = 2;
     
     // Position Variables
     public GameObject laneOne;
@@ -69,11 +69,10 @@ public class Player : MonoBehaviour
             transform.position += Vector3.up * velocity * Time.deltaTime;
 
             isGrounded = false;
-
-            if (transform.position.y >= fallHeight || !isGrounded)
-            {
-                transform.position -= Vector3.up * gravity * Time.deltaTime;
-            }
+        }
+        if (transform.position.y >= fallHeight || !isGrounded)
+        {
+            transform.position -= Vector3.up * gravity * Time.deltaTime;
         }
     }
 
