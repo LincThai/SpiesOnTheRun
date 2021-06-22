@@ -135,7 +135,7 @@ MonoBehaviour:
   laneThree: {fileID: 0}
   isDead: 0
   isGrounded: 0
-  capsuleHeightOne: 1
+  capsuleHeightOne: 2
   capsuleHeightTwo: 0.4
 --- !u!136 &5971756855972246819
 CapsuleCollider:

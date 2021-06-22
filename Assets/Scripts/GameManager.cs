@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         pauseGUI.SetActive(false);
         endGUI.SetActive(false);
         wasDead = false;
-        originPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().laneOne;
+        originPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().laneTwo;
         player = GameObject.FindGameObjectWithTag("Player");
         PS = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
             startGUI.SetActive(true);
             if (wasDead)
             {
-                Destroy(GameObject.FindGameObjectsWithTag("Obstacles"));
                 player.transform.position = originPosition.transform.position;
                 wasDead = false;
                 PS.isDead = false;
@@ -65,7 +64,7 @@ public class GameManager : MonoBehaviour
             gameGUI.SetActive(false);
             pauseGUI.SetActive(true);
         }
-    } 
+    }
 }
 
 public enum GameState { preGame, game, dead, pause };

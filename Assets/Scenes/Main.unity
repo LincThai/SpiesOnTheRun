@@ -1027,6 +1027,7 @@ MonoBehaviour:
   gameGUI: {fileID: 86617318}
   pauseGUI: {fileID: 247792845}
   endGUI: {fileID: 398173543}
+  wasDead: 0
 --- !u!1 &622946068
 GameObject:
   m_ObjectHideFlags: 0

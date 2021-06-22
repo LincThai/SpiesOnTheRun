@@ -32,5 +32,9 @@ public class Obstacle : MonoBehaviour
 
             transform.position = transform.position + (Vector3.forward * -moveSpeed * Time.deltaTime);
         }
+        if (GM.wasDead)
+        {
+            Destroy(gameObject);
+        }
     }
 }

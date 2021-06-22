@@ -58,17 +58,17 @@ public class ObstacleSpawner : MonoBehaviour
         //Debug.Log(x);
 
         //get random value for i
-        i = Random.Range(0, 5);
+        i = Random.Range(0, 4);
         //Debug.Log(i);
 
         //make variable spawnRotate
         Quaternion spawnRotate = new Quaternion();
         spawnRotate = Quaternion.Euler(0.0f, 0.0f, 0.0f);
 
-        if (i == 4)
+        /*if (i == 4)
         {
             spawnRotate = Quaternion.Euler(0.0f, 180.0f, 0.0f);
-        }
+        }*/
 
         Instantiate(obstacleList[i], new Vector3(x, 0, z), spawnRotate);
     }
