@@ -72,7 +72,6 @@ MonoBehaviour:
   - {fileID: 6744294356066217375, guid: 14f0eecbfcbff7c4f9598ea8fe9ceaa9, type: 3}
   - {fileID: 6808277298950131334, guid: ae8fb1e4bb3c392418752bba42539016, type: 3}
   - {fileID: 7090459706235473520, guid: 80c8c0e91d23ab544b0b702207d1074d, type: 3}
-  - {fileID: 3547519299993523955, guid: 0e01ffd622546b34c9746f803ea1e206, type: 3}
   x: 0
   z: 0
   timeTillSpawn: 7.5

@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //Set Variables
+    //UI variables
     public GameState gameState;
     public GameObject startGUI;
     public GameObject gameGUI;
     public GameObject pauseGUI;
     public GameObject endGUI;
+    // Variables to reset game
+    public bool wasDead;
+    GameObject originPosition;
+    GameObject player;
+    Player PS;
     
 
     // Start is called before the first frame update
@@ -18,6 +25,11 @@ public class GameManager : MonoBehaviour
         startGUI.SetActive(true);
         gameGUI.SetActive(false);
         pauseGUI.SetActive(false);
+        endGUI.SetActive(false);
+        wasDead = false;
+        originPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().laneOne;
+        player = GameObject.FindGameObjectWithTag("Player");
+        PS = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -28,6 +40,13 @@ public class GameManager : MonoBehaviour
             endGUI.SetActive(false);
             pauseGUI.SetActive(false);
             startGUI.SetActive(true);
+            if (wasDead)
+            {
+                Destroy(GameObject.FindGameObjectsWithTag("Obstacles"));
+                player.transform.position = originPosition.transform.position;
+                wasDead = false;
+                PS.isDead = false;
+            }
         }
         else if (gameState == GameState.game)
         {
@@ -39,13 +58,14 @@ public class GameManager : MonoBehaviour
         {
             gameGUI.SetActive(false);
             endGUI.SetActive(true);
+            wasDead = true;
         }
         else if (gameState == GameState.pause)
         {
             gameGUI.SetActive(false);
             pauseGUI.SetActive(true);
         }
-    }
+    } 
 }
 
 public enum GameState { preGame, game, dead, pause };
