@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
     // collider variables to change colliders
     public float capsuleHeightOne;
     public float capsuleHeightTwo;
+
+    // game state variavle
+    GameManager GM;
     
 
     // Start is called before the first frame update
@@ -35,16 +38,25 @@ public class Player : MonoBehaviour
         // get children of player game object and set game object state
         transform.GetChild(0).gameObject.SetActive(true);
         transform.GetChild(1).gameObject.SetActive(false);
+        // Reference Game Manager
+        GM = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isDead)
+        if (GM.gameState == GameState.game)
         {
-            PlayerPosition();
-            PlayerSlide();
-            PlayerJump();
+            if (!isDead)
+            {
+                PlayerPosition();
+                PlayerSlide();
+                PlayerJump();
+            }
+            else
+            {
+                GM.gameState = GameState.dead;
+            }
         }
     }
 
@@ -59,6 +71,7 @@ public class Player : MonoBehaviour
         if (other.tag == "Ground")
         {
             isGrounded = true;
+           // Debug.Log("GroundedAgain");
         }
     }
 
@@ -73,6 +86,10 @@ public class Player : MonoBehaviour
         if (transform.position.y >= fallHeight || !isGrounded)
         {
             transform.position -= Vector3.up * gravity * Time.deltaTime;
+        }
+        if (transform.position.y >= fallHeight)
+        {
+            transform.position = new Vector3 (transform.position.x, fallHeight, transform.position.z);
         }
     }
 
@@ -100,7 +117,7 @@ public class Player : MonoBehaviour
     public void PlayerPosition()
     {
         // when the player
-        if (transform.position == laneOne.transform.position)
+        if (transform.position.x == laneOne.transform.position.x)
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
@@ -112,7 +129,7 @@ public class Player : MonoBehaviour
             }
         }
         
-        else if (transform.position == laneTwo.transform.position)
+        else if (transform.position.x == laneTwo.transform.position.x)
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
@@ -124,7 +141,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        else if (transform.position == laneThree.transform.position)
+        else if (transform.position.x == laneThree.transform.position.x)
         {
             if (Input.GetKeyDown(KeyCode.A))
             {

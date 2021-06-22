@@ -8,14 +8,25 @@ public class Platform : MonoBehaviour
     public float moveSpeed = 1;
     public float endPosition = 20.0f;
 
+    GameManager GM;
+
+
+    void Start()
+    {
+        GM = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position + (Vector3.back * moveSpeed * Time.deltaTime);
-
-        if (transform.position.z <= -endPosition)
+        if (GM.gameState == GameState.game)
         {
-            transform.position = transform.position + (Vector3.forward * endPosition * 2);
+            transform.position = transform.position + (Vector3.back * moveSpeed * Time.deltaTime);
+
+            if (transform.position.z <= -endPosition)
+            {
+                transform.position = transform.position + (Vector3.forward * endPosition * 2);
+            }
         }
     }
 }

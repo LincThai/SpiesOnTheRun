@@ -8,13 +8,18 @@ public class ObstacleSpawner : MonoBehaviour
     public List<GameObject> obstacleList;
 
     //set variables
+    // Numeric Variables
     public int x;
     public float z;
     int i;
     public float timeTillSpawn = 7.5f;
     public float timePassed;
-    
+
+    // Bool variables
     public bool canSpawn;
+
+    // Game Manager
+    GameManager GM;
 
     // Start is called before the first frame update
     void Start()
@@ -22,23 +27,27 @@ public class ObstacleSpawner : MonoBehaviour
         z = transform.position.z;
         canSpawn = true;
         timePassed = 0.0f;
+        GM = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timePassed += Time.deltaTime;
-        //ObstacleSpawn();
-        if (canSpawn)
+        if (GM.gameState == GameState.game)
         {
-            ObstacleSpawn();
-            canSpawn = false;
-        }
+            timePassed += Time.deltaTime;
+            //ObstacleSpawn();
+            if (canSpawn)
+            {
+                ObstacleSpawn();
+                canSpawn = false;
+            }
 
-        if (timePassed >= timeTillSpawn)
-        {
-            canSpawn = true;
-            timePassed = 0.0f;
+            if (timePassed >= timeTillSpawn)
+            {
+                canSpawn = true;
+                timePassed = 0.0f;
+            }
         }
     }
 
