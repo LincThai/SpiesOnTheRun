@@ -13,12 +13,6 @@ public class PauseMenu : MonoBehaviour
         GM = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnClickButton(int buttonClicked)
     {
         if (buttonClicked == 1)
@@ -28,6 +22,7 @@ public class PauseMenu : MonoBehaviour
         if (buttonClicked == 2)
         {
             GM.gameState = GameState.preGame;
+            GM.wasDead = true;
         }
     }
 }
