@@ -45,16 +45,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // when in gamestate.game
         if (GM.gameState == GameState.game)
         {
+            //if player nis not dead
             if (!isDead)
             {
+                // call functions
                 PlayerPosition();
                 PlayerSlide();
                 PlayerJump();
             }
             else
             {
+                // change game state to dead
                 GM.gameState = GameState.dead;
             }
         }
@@ -75,18 +79,22 @@ public class Player : MonoBehaviour
         }
     }
 
+    // makes player jump
     public void PlayerJump()
     {
+        // makes the player move up non y axis
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += Vector3.up * velocity * Time.deltaTime;
 
             isGrounded = false;
         }
+        // makes the player move down on y axis
         if (transform.position.y >= fallHeight || !isGrounded)
         {
             transform.position -= Vector3.up * gravity * Time.deltaTime;
         }
+        // stops player from moving higher
         if (transform.position.y >= fallHeight)
         {
             transform.position = new Vector3 (transform.position.x, fallHeight, transform.position.z);
@@ -116,7 +124,7 @@ public class Player : MonoBehaviour
     // player movement between lanes
     public void PlayerPosition()
     {
-        // when the player
+        // when the player is in a certain position
         if (transform.position.x == laneOne.transform.position.x)
         {
             if (Input.GetKeyDown(KeyCode.A))

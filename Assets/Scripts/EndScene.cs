@@ -21,7 +21,7 @@ public class EndScene : MonoBehaviour
             scoreText.text = finalScore.ToString();
         }
     }
-
+    //when a button is clicked
     public void OnClickButton(int buttonClicked)
     {
         if (buttonClicked == 1)

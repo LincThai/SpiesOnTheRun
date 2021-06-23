@@ -19,6 +19,7 @@ public class StartScreen : MonoBehaviour
         
     }
 
+    // when a button is clicked
     public void OnClickButton(int buttonClicked)
     {
         if (buttonClicked == 1)

@@ -10,9 +10,11 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //reference game manager
         GM = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
+    // when then button is clicked it completes the function
     public void OnClickButton(int buttonClicked)
     {
         if (buttonClicked == 1)

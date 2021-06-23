@@ -25,6 +25,7 @@ public class GameScreen : MonoBehaviour
         { 
             isDead = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().isDead;
         
+            // when player dies
             if (!isDead)
             {
                 // increase the player score by 1
@@ -36,6 +37,7 @@ public class GameScreen : MonoBehaviour
         }
     }
 
+    //when button is clicked
     public void ClickButton(int buttonClicked)
     {
 

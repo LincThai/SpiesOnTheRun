@@ -20,18 +20,22 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Functions only when in game
         if (GM.gameState == GameState.game)
         {
+            // increases timePassed variable value
             timePassed += Time.deltaTime;
 
             if (timePassed >= despawnTime)
             {
+                //destroys obstacle
                 Destroy(gameObject);
                 timePassed = 0.0f;
             }
 
             transform.position = transform.position + (Vector3.forward * -moveSpeed * Time.deltaTime);
         }
+        // reset obstacles in the game
         if (GM.wasDead)
         {
             Destroy(gameObject);

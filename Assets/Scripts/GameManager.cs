@@ -21,11 +21,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // set the starting game state
         gameState = GameState.preGame;
+        // set all GUI's to these activate and deactivate
         startGUI.SetActive(true);
         gameGUI.SetActive(false);
         pauseGUI.SetActive(false);
         endGUI.SetActive(false);
+        // set wasDead variable value
         wasDead = false;
         originPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().laneTwo;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -35,11 +38,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // when the gamen states change
         if (gameState == GameState.preGame)
         {
             endGUI.SetActive(false);
             pauseGUI.SetActive(false);
             startGUI.SetActive(true);
+            // resets the game
             if (wasDead)
             {
                 player.transform.position = originPosition.transform.position;
