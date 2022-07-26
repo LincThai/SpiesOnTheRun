@@ -58,8 +58,8 @@ public class Player : MonoBehaviour
                 // call functions
                 PlayerPosition();
                 PlayerSlide();
-                PlayerJump();
                 GroundCheck();
+                PlayerJump();
             }
             else
             {
@@ -86,23 +86,33 @@ public class Player : MonoBehaviour
         if (Physics.CheckSphere(groundCheck.transform.position, GCheckRadius))
         {
             isGrounded = true;
+            Debug.Log(isGrounded);
+        }
+        else
+        {
+            isGrounded = false;
+            Debug.Log(isGrounded);
         }
     }
 
     // makes player jump
     public void PlayerJump()
     {
-        // makes the player move up non y axis
-        if (Input.GetKey(KeyCode.W))
+        // makes the player move up on y axis
+        if (Input.GetKey(KeyCode.W) && isGrounded)
         {
             transform.position += Vector3.up * velocity * Time.deltaTime;
 
             isGrounded = false;
         }
         // makes the player move down on y axis
-        if (transform.position.y >= fallHeight || !isGrounded)
+        if (transform.position.y <= fallHeight || !isGrounded)
         {
             transform.position -= Vector3.up * gravity * Time.deltaTime;
+        }
+        else if (transform.position.y <= 0)
+        {
+            transform.position -= Vector3.up * 0 * Time.deltaTime;
         }
         // stops player from moving higher
         if (transform.position.y >= fallHeight)
