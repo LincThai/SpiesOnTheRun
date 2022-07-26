@@ -9,10 +9,14 @@ public class Player : MonoBehaviour
     public float gravity = 3;
     public float fallHeight = 2;
     
-    // Position Variables
+    // Lane Position Variables
     public GameObject laneOne;
     public GameObject laneTwo;
     public GameObject laneThree;
+
+    // Ground Check Variables
+    public GameObject groundCheck;
+    public float GCheckRadius;
 
     // Player variable
     public bool isDead;
@@ -55,6 +59,7 @@ public class Player : MonoBehaviour
                 PlayerPosition();
                 PlayerSlide();
                 PlayerJump();
+                GroundCheck();
             }
             else
             {
@@ -67,15 +72,20 @@ public class Player : MonoBehaviour
     // when player runs/collides into something
     public void OnTriggerEnter(Collider other)
     {
+        // check if the game object that has collided is an obstacle
         if (other.tag == "Obstacle")
         {
             isDead = true;
             Debug.Log("Dead");
         }
-        if (other.tag == "Ground")
+    }
+
+    public void GroundCheck()
+    {
+        // use physics checksphere to check if player is grounded
+        if (Physics.CheckSphere(groundCheck.transform.position, GCheckRadius))
         {
             isGrounded = true;
-           // Debug.Log("GroundedAgain");
         }
     }
 
